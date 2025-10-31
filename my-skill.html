@@ -1,0 +1,667 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Self </title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Press+Start+2P&display=swap" rel="stylesheet">
+    <style>
+         :root {
+            --color-dark: #1a1a2e;
+            --color-light: #e0e0e0;
+            --color-accent: #e94560;
+            --color-text-dark: #e0e0e0;
+            --color-text-light: #1a1a2e;
+            --color-skill-1: #FF5733;
+            --color-skill-2: #33FF57;
+            --color-skill-3: #3357FF;
+            --color-skill-4: #FF33F3;
+            --color-skill-5: #FFC133;
+            --color-skill-6: #33FFF3;
+            --color-skill-7: #B833FF;
+            --color-skill-8: #FF8D33;
+            --color-skill-9: #33FF8D;
+            --color-skill-10: #8D33FF;
+            --color-skill-11: #FF338D;
+            --color-skill-12: #338DFF;
+            --color-skill-13: #8DFF33;
+            --color-skill-14: #FF3333;
+            --color-skill-15: #3333FF;
+            --color-skill-16: #FFFF33;
+        }
+        
+        *,
+        *::before,
+        *::after {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+        
+        html {
+            scroll-behavior: smooth;
+        }
+        
+        body {
+            font-family: 'Montserrat', sans-serif;
+            background-color: var(--color-dark);
+            color: var(--color-text-dark);
+            line-height: 1.6;
+            margin: 0;
+            overflow-x: hidden;
+        }
+        
+        a {
+            color: var(--color-accent);
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+        
+        a:hover {
+            color: var(--color-skill-1);
+        }
+        
+        header {
+            background-color: rgba(26, 26, 46, 0.9);
+            padding: 1rem 0;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
+        }
+        
+        nav {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0 1rem;
+        }
+        
+        .logo {
+            font-family: 'Press Start 2P', cursive;
+            font-size: 1.5rem;
+            color: var(--color-accent);
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+        }
+        
+        .nav-list {
+            list-style: none;
+            display: flex;
+            gap: 1.5rem;
+        }
+        
+        .nav-list a {
+            color: var(--color-text-dark);
+            font-weight: 700;
+            font-size: 1rem;
+            position: relative;
+        }
+        
+        .nav-list a::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            background-color: var(--color-accent);
+            bottom: -5px;
+            left: 0;
+            transition: width 0.3s ease;
+        }
+        
+        .nav-list a:hover::after {
+            width: 100%;
+        }
+        
+        main {
+            padding: 2rem 1rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        
+        section {
+            padding: 4rem 0;
+            margin-bottom: 2rem;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        
+        section:last-of-type {
+            border-bottom: none;
+        }
+        
+        h1,
+        h2 {
+            font-family: 'Press Start 2P', cursive;
+            color: var(--color-accent);
+            text-align: center;
+            margin-bottom: 2rem;
+            position: relative;
+            padding-bottom: 10px;
+        }
+        
+        h1::after,
+        h2::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80px;
+            height: 3px;
+            background-color: var(--color-skill-1);
+            border-radius: 2px;
+        }
+        
+        h1 {
+            font-size: 2.5rem;
+            text-shadow: 3px 3px 6px rgba(0, 0, 0, 0.8);
+        }
+        
+        h2 {
+            font-size: 2rem;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.6);
+        }
+        
+        .hero {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            min-height: 80vh;
+            background: linear-gradient(rgba(26, 26, 46, 0.8), rgba(26, 26, 46, 0.8)), url('https://source.unsplash.com/random/1600x900/?cybersecurity,coding') no-repeat center center/cover;
+            background-attachment: fixed;
+            color: var(--color-text-dark);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: radial-gradient(circle at center, rgba(233, 69, 96, 0.2) 0%, transparent 70%);
+            opacity: 0.5;
+            animation: pulse 5s infinite ease-in-out;
+        }
+        
+        @keyframes pulse {
+            0% {
+                transform: scale(1);
+                opacity: 0.5;
+            }
+            50% {
+                transform: scale(1.1);
+                opacity: 0.7;
+            }
+            100% {
+                transform: scale(1);
+                opacity: 0.5;
+            }
+        }
+        
+        .hero-content {
+            z-index: 1;
+            padding: 2rem;
+            background-color: rgba(0, 0, 0, 0.5);
+            border-radius: 15px;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.7);
+        }
+        
+        .hero p {
+            font-size: 1.2rem;
+            margin-top: 1rem;
+            max-width: 700px;
+            color: var(--color-light);
+        }
+        
+        .btn {
+            display: inline-block;
+            background-color: var(--color-accent);
+            color: var(--color-text-dark);
+            padding: 0.8rem 1.8rem;
+            border-radius: 5px;
+            margin-top: 2rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            transition: background-color 0.3s ease, transform 0.3s ease;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.4);
+        }
+        
+        .btn:hover {
+            background-color: var(--color-skill-1);
+            transform: translateY(-3px);
+            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.6);
+        }
+        
+        .about-content {
+            display: flex;
+            flex-direction: column;
+            gap: 1.5rem;
+            font-size: 1.1rem;
+            color: var(--color-light);
+            text-align: center;
+        }
+        
+        .about-content p strong {
+            color: var(--color-accent);
+        }
+        
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 1.5rem;
+            margin-top: 2rem;
+        }
+        
+        .skill-card {
+            background-color: rgba(26, 26, 46, 0.8);
+            border-radius: 10px;
+            padding: 1.5rem;
+            text-align: center;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            position: relative;
+            overflow: hidden;
+            border: 1px solid transparent;
+        }
+        
+        .skill-card:hover {
+            transform: translateY(-5px) scale(1.02);
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.7);
+        }
+        
+        .skill-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(45deg, var(--skill-card-color-start), var(--skill-card-color-end));
+            opacity: 0.2;
+            z-index: 0;
+            transition: opacity 0.3s ease;
+        }
+        
+        .skill-card:hover::before {
+            opacity: 0.4;
+        }
+        
+        .skill-card h3 {
+            font-family: 'Press Start 2P', cursive;
+            font-size: 1.2rem;
+            margin-bottom: 1rem;
+            position: relative;
+            z-index: 1;
+            color: var(--color-text-dark);
+        }
+        
+        .skill-card p {
+            color: var(--color-light);
+            font-size: 1rem;
+            position: relative;
+            z-index: 1;
+        }
+        /* Skill specific colors */
+        
+        .skill-card:nth-child(1) {
+            --skill-card-color-start: var(--color-skill-1);
+            --skill-card-color-end: var(--color-skill-2);
+            border-color: var(--color-skill-1);
+        }
+        
+        .skill-card:nth-child(2) {
+            --skill-card-color-start: var(--color-skill-3);
+            --skill-card-color-end: var(--color-skill-4);
+            border-color: var(--color-skill-3);
+        }
+        
+        .skill-card:nth-child(3) {
+            --skill-card-color-start: var(--color-skill-5);
+            --skill-card-color-end: var(--color-skill-6);
+            border-color: var(--color-skill-5);
+        }
+        
+        .skill-card:nth-child(4) {
+            --skill-card-color-start: var(--color-skill-7);
+            --skill-card-color-end: var(--color-skill-8);
+            border-color: var(--color-skill-7);
+        }
+        
+        .skill-card:nth-child(5) {
+            --skill-card-color-start: var(--color-skill-9);
+            --skill-card-color-end: var(--color-skill-10);
+            border-color: var(--color-skill-9);
+        }
+        
+        .skill-card:nth-child(6) {
+            --skill-card-color-start: var(--color-skill-11);
+            --skill-card-color-end: var(--color-skill-12);
+            border-color: var(--color-skill-11);
+        }
+        
+        .skill-card:nth-child(7) {
+            --skill-card-color-start: var(--color-skill-13);
+            --skill-card-color-end: var(--color-skill-14);
+            border-color: var(--color-skill-13);
+        }
+        
+        .skill-card:nth-child(8) {
+            --skill-card-color-start: var(--color-skill-15);
+            --skill-card-color-end: var(--color-skill-16);
+            border-color: var(--color-skill-15);
+        }
+        
+        .skill-card:nth-child(9) {
+            --skill-card-color-start: var(--color-skill-1);
+            --skill-card-color-end: var(--color-skill-3);
+            border-color: var(--color-skill-1);
+        }
+        
+        .skill-card:nth-child(10) {
+            --skill-card-color-start: var(--color-skill-2);
+            --skill-card-color-end: var(--color-skill-4);
+            border-color: var(--color-skill-2);
+        }
+        
+        .skill-card:nth-child(11) {
+            --skill-card-color-start: var(--color-skill-5);
+            --skill-card-color-end: var(--color-skill-7);
+            border-color: var(--color-skill-5);
+        }
+        
+        .skill-card:nth-child(12) {
+            --skill-card-color-start: var(--color-skill-6);
+            --skill-card-color-end: var(--color-skill-8);
+            border-color: var(--color-skill-6);
+        }
+        
+        .skill-card:nth-child(13) {
+            --skill-card-color-start: var(--color-skill-9);
+            --skill-card-color-end: var(--color-skill-11);
+            border-color: var(--color-skill-9);
+        }
+        
+        .skill-card:nth-child(14) {
+            --skill-card-color-start: var(--color-skill-10);
+            --skill-card-color-end: var(--color-skill-12);
+            border-color: var(--color-skill-10);
+        }
+        
+        footer {
+            background-color: var(--color-dark);
+            color: var(--color-text-dark);
+            text-align: center;
+            padding: 2rem 1rem;
+            margin-top: 4rem;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        
+        footer p {
+            margin-bottom: 0.5rem;
+            font-size: 0.9rem;
+        }
+        
+        .social-links a {
+            font-size: 1.5rem;
+            margin: 0 0.5rem;
+            color: var(--color-light);
+            transition: color 0.3s ease;
+        }
+        
+        .social-links a:hover {
+            color: var(--color-accent);
+        }
+        /* Accessibility improvements */
+        
+        .skip-link {
+            position: absolute;
+            top: -40px;
+            left: 0;
+            background: var(--color-accent);
+            color: var(--color-dark);
+            padding: 8px;
+            z-index: 10000;
+            transition: top 0.3s ease-in-out;
+        }
+        
+        .skip-link:focus {
+            top: 0;
+        }
+        /* Responsive adjustments */
+        
+        @media (max-width: 768px) {
+            .nav-list {
+                display: none;
+                /* Hide navigation for small screens */
+            }
+            .logo {
+                font-size: 1.2rem;
+            }
+            h1 {
+                font-size: 1.8rem;
+            }
+            h2 {
+                font-size: 1.5rem;
+            }
+            .hero p {
+                font-size: 1rem;
+            }
+            .about-content {
+                font-size: 1rem;
+            }
+            .skills-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+        
+        @media (min-width: 769px) {
+            .about-content {
+                text-align: left;
+            }
+        }
+        /* Simple burger menu for small screens (conceptual, requires JS) */
+        
+        .menu-toggle {
+            display: none;
+            flex-direction: column;
+            cursor: pointer;
+            gap: 5px;
+            z-index: 1001;
+        }
+        
+        .menu-toggle span {
+            width: 25px;
+            height: 3px;
+            background-color: var(--color-text-dark);
+            border-radius: 2px;
+            transition: all 0.3s ease;
+        }
+        
+        @media (max-width: 768px) {
+            .menu-toggle {
+                display: flex;
+            }
+            .nav-list {
+                flex-direction: column;
+                position: absolute;
+                top: 0;
+                right: 0;
+                background-color: var(--color-dark);
+                width: 70%;
+                height: 100vh;
+                padding-top: 5rem;
+                transform: translateX(100%);
+                transition: transform 0.3s ease-in-out;
+                box-shadow: -5px 0 15px rgba(0, 0, 0, 0.5);
+                display: flex;
+                /* Ensure it's display flex when active */
+            }
+            .nav-list.active {
+                transform: translateX(0);
+            }
+            .nav-list a {
+                padding: 1rem 2rem;
+                width: 100%;
+                text-align: left;
+                border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+            }
+            .nav-list a:hover::after {
+                width: 50%;
+            }
+            .menu-toggle.active span:nth-child(1) {
+                transform: rotate(-45deg) translate(-5px, 6px);
+            }
+            .menu-toggle.active span:nth-child(2) {
+                opacity: 0;
+            }
+            .menu-toggle.active span:nth-child(3) {
+                transform: rotate(45deg) translate(-5px, -6px);
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <a href="#main-content" class="skip-link">Skip to main content</a>
+
+    <header>
+        <nav aria-label="Main Navigation">
+            <a href="#" class="logo">Kim Panhaseth</a>
+            <button class="menu-toggle" aria-controls="primary-navigation" aria-expanded="false">
+                <span class="sr-only">Toggle navigation</span>
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+            <ul class="nav-list" id="primary-navigation">
+                <li><a href="#about">About Me</a></li>
+                <li><a href="#skills">Skills</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main id="main-content">
+        <section class="hero" aria-labelledby="hero-title">
+            <div class="hero-content">
+                <h1 id="hero-title">Kim Panhaseth</h1>
+                <p>I'm 15 years old and I'm part of grey hat and black hat</p>
+                <p>Exploring the with Python, building powerful tools, and securing the web.</p>
+                <a href="#skills" class="btn">Discover My Expertise</a>
+            </div>
+        </section>
+
+        <section id="about" aria-labelledby="about-heading">
+            <h2 id="about-heading">About Me</h2>
+            <div class="about-content">
+                <p>Hello! I'm <strong>Kim Panhaseth</strong>, a 15-year-old and I'm the pard of the Cyber Attack with Deverloper. My job is Cyber Attack with Developer like building the tool or building the website .</p>
+                <p>I'm the part of <strong>Grey Hat</strong> and <strong>Black Hat</strong> philosophy, constantly pushing boundaries to learn and innovate. My passion lies in creating impactful solutions, whether it's developing robust software or exploring
+                    the intricate vulnerabilities of digital systems.</p>
+                <p>I'm always eager to learn new technologies and apply my skills to challenging projects. </p>
+            </div>
+        </section>
+
+        <section id="skills" aria-labelledby="skills-heading">
+            <h2 id="skills-heading">My Skills</h2>
+            <div class="skills-grid">
+                <div class="skill-card">
+                    <h3>Python Developer</h3>
+                    <p>Proficient in Python for scripting, automation, and complex application development.</p>
+                </div>
+                <div class="skill-card">
+                    <h3>Building Tools</h3>
+                    <p>Expert in crafting custom hacking tools and efficient checker tools for various purposes.</p>
+                </div>
+                <div class="skill-card">
+                    <h3>Frontend Development</h3>
+                    <p>Skilled in building responsive and engaging user interfaces using modern web technologies.</p>
+                </div>
+                <div class="skill-card">
+                    <h3>Telegram Bot Development</h3>
+                    <p>Creating interactive and functional Telegram bots for automation and communication.</p>
+                </div>
+                <div class="skill-card">
+                    <h3>DDoS Attacker</h3>
+                    <p>Understanding and implementing Distributed Denial of Service attack methodologies (for research and defensive purposes).</p>
+                </div>
+                <div class="skill-card">
+                    <h3>Phishing</h3>
+                    <p>Knowledgeable in phishing techniques and social engineering to understand and mitigate threats.</p>
+                </div>
+                <div class="skill-card">
+                    <h3>Website Hacking</h3>
+                    <p>Exploring vulnerabilities in web applications to identify and report security flaws.</p>
+                </div>
+                <div class="skill-card">
+                    <h3>Bug Payment</h3>
+                    <p>Investigating and exploiting payment gateway vulnerabilities (for ethical disclosure).</p>
+                </div>
+                <div class="skill-card">
+                    <h3>Hacking Companies</h3>
+                    <p>Simulating and analyzing company network and system vulnerabilities to improve security postures (ethical hacking).</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="contact" aria-labelledby="contact-heading">
+            <h2 id="contact-heading">Get in Touch</h2>
+            <div class="about-content">
+                <p>I'm always open to new challenges and collaborations. If you have an interesting project or just want to connect, feel free to reach out!</p>
+                <p>While I'm not providing direct contact details here for security reasons, you can often find me active in various cybersecurity communities.</p>
+                <p>Stay tuned for more updates on my projects and explorations!</p>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2025 Kim Panhaseth.</p>
+        <div class="social-links" aria-label="Social Media Links">
+        </div>
+    </footer>
+
+    <script>
+        const menuToggle = document.querySelector('.menu-toggle');
+        const navList = document.querySelector('.nav-list');
+
+        menuToggle.addEventListener('click', () => {
+            navList.classList.toggle('active');
+            menuToggle.classList.toggle('active');
+            const expanded = menuToggle.getAttribute('aria-expanded') === 'true' || false;
+            menuToggle.setAttribute('aria-expanded', !expanded);
+        });
+
+        // Close menu when a navigation link is clicked
+        navList.querySelectorAll('a').forEach(link => {
+            link.addEventListener('click', () => {
+                navList.classList.remove('active');
+                menuToggle.classList.remove('active');
+                menuToggle.setAttribute('aria-expanded', 'false');
+            });
+        });
+
+        // Add 'sr-only' class for screen reader only text
+        document.querySelectorAll('.sr-only').forEach(el => {
+            el.style.position = 'absolute';
+            el.style.width = '1px';
+            el.style.height = '1px';
+            el.style.padding = '0';
+            el.style.margin = '-1px';
+            el.style.overflow = 'hidden';
+            el.style.clip = 'rect(0, 0, 0, 0)';
+            el.style.whiteSpace = 'nowrap';
+            el.style.border = '0';
+        });
+    </script>
+</body>
+
+</html>
